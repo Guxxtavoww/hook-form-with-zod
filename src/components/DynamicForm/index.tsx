@@ -20,7 +20,7 @@ function DynamicForm<T extends GenericType>(
     <form onSubmit={onSubmit((data) => handleSubmit(data as T))}>
       {!!inputs
         ? inputs.map((input, index) => (
-            <div>
+            <div key={index}>
               {input.label ? (
                 <label htmlFor={input.name.toString()}>{input.label}</label>
               ) : null}
@@ -28,7 +28,6 @@ function DynamicForm<T extends GenericType>(
                 type="text"
                 id={String(input.name)}
                 {...register(input.name.toString())}
-                key={index}
               />
               {formState.errors[input.name]?.message ? (
                 <span>
