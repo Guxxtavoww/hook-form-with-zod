@@ -1,7 +1,9 @@
 import React from 'react';
 import { z } from 'zod';
 
-export interface iDynamicFormProps<T extends object> {
+export type GenericType = Record<string, number | string | boolean>;
+
+export interface iDynamicFormProps<T extends GenericType> {
   inputs?: iInputProps<T>[];
   schema: z.Schema<T>;
   children?: React.ReactNode;

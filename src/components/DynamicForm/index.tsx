@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { iDynamicFormProps } from './types';
+import { iDynamicFormProps, GenericType } from './types';
 
-function DynamicForm<T extends object>(
+function DynamicForm<T extends GenericType>(
   props: iDynamicFormProps<T>
 ): JSX.Element {
   const { schema, inputs, handleSubmit, children } = props;
