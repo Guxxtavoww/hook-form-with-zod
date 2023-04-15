@@ -31,12 +31,13 @@ function DynamicForm<T extends GenericType>(
               />
               {formState.errors[input.name]?.message ? (
                 <span>
-                  {JSON.stringify(formState.errors[input.name]?.message)}
+                  {String(formState.errors[input.name]?.message)}
                 </span>
               ) : null}
             </div>
           ))
         : children}
+        <button type="submit">Teste</button>
     </form>
   );
 }
